@@ -6,7 +6,7 @@ export class SignUpController implements Controller {
     try {
       return { statusCode: 200, body: req.body };
     } catch (error) {
-      return { statusCode: 200, body: { message: error } };
+      return { statusCode: 500, body: { message: error } };
     }
   }
 }
