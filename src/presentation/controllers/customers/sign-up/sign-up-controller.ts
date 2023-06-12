@@ -4,6 +4,12 @@ import { HttpResponse } from "../../../protocols/http-response";
 
 export interface SignUpControllerBodyRequest {
   name: string;
+  cpf: string;
+  email: string;
+  password: string;
+  passwordConfirmation: string;
+  phone: string;
+  customerType: string;
 }
 
 export interface SignUpControllerInterface extends Controller {
