@@ -1,5 +1,5 @@
-import { PORT, app } from "./express-config";
-import { appRouter } from "./routes";
+import { PORT, app } from "./config/express-config";
+import { appRouter } from "../presentation/controllers/routes";
 
 app.use("/", appRouter);
 
