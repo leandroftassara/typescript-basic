@@ -1,4 +1,4 @@
 export type CustomerType = {
-  id: string;
+  id: number;
   type: string;
 };
