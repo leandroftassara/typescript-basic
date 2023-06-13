@@ -1,3 +1,4 @@
+import { SignUp } from "../../../../domain/usecases/customers/sign-up";
 import { Controller } from "../../../protocols/controller";
 import { ControllerResponses } from "../../../protocols/controller-responses";
 import { HttpResponse } from "../../../protocols/http-response";
@@ -17,11 +18,15 @@ export interface SignUpControllerInterface extends Controller {
 }
 
 export class SignUpController implements SignUpControllerInterface {
-  constructor(private readonly responses: ControllerResponses) {}
+  constructor(
+    private readonly responses: ControllerResponses,
+    private readonly signUpService: SignUp
+  ) {}
 
   async handle(params: SignUpControllerBodyRequest): Promise<HttpResponse> {
     try {
-      return this.responses.ok(params);
+      const response = await this.signUpService.execute(params);
+      return this.responses.ok(response);
     } catch (error) {
       return this.responses.serverError({ message: error });
     }
