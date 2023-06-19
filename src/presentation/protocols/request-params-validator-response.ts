@@ -7,7 +7,3 @@ export interface RequestParamsValidatorResponse {
   response: boolean;
   error: ErrorDescription | {};
 }
-
-export interface RequestParamsValidatorInterface {
-  validate: (requestParams: {}) => Promise<RequestParamsValidatorResponse>;
-}

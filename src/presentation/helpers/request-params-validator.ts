@@ -1,8 +1,9 @@
 import { validate } from "class-validator";
-import {
-  RequestParamsValidatorInterface,
-  RequestParamsValidatorResponse,
-} from "../protocols/request-params-validator-interface";
+import { RequestParamsValidatorResponse } from "../protocols/request-params-validator-response";
+
+export interface RequestParamsValidatorInterface {
+  validate: (requestParams: {}) => Promise<RequestParamsValidatorResponse>;
+}
 
 export class RequestParamsValidator<T extends object>
   implements RequestParamsValidatorInterface

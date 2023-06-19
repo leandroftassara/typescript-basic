@@ -2,7 +2,7 @@ import { SignUp } from "../../../../domain/usecases/customers/sign-up";
 import { Controller } from "../../../protocols/controller";
 import { ControllerResponses } from "../../../protocols/controller-responses";
 import { HttpResponse } from "../../../protocols/http-response";
-import { RequestParamsValidatorInterface } from "../../../protocols/request-params-validator-interface";
+import { RequestParamsValidatorInterface } from "../../../protocols/request-params-validator-response";
 
 export interface SignUpControllerInterface extends Controller {
   handle: (params: any) => Promise<HttpResponse>;
