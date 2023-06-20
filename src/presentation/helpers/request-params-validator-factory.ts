@@ -1,5 +1,7 @@
-import { RequestParamsValidatorInterface } from "../protocols/request-params-validator-response";
-import { RequestParamsValidator } from "./request-params-validator";
+import {
+  RequestParamsValidator,
+  RequestParamsValidatorInterface,
+} from "./request-params-validator";
 
 export const makeRequestParamsValidator = (
   classToValidate: any

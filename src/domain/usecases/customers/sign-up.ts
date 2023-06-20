@@ -1,11 +1,9 @@
-export type SignUpParams = {
+import { Length } from "class-validator";
+
+export class SignUpParams {
+  @Length(2, 100)
   name: string;
-  cpf: string;
-  email: string;
-  password: string;
-  phone: string;
-  customerType: string;
-};
+}
 
 export type SignUpResponse = {
   status: boolean;
