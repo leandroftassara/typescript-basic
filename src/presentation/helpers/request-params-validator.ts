@@ -17,11 +17,14 @@ export class RequestParamsValidator<T extends object>
     const errors = await validate(instance);
 
     if (errors.length > 0) {
+      console.log(errors[0]);
       return {
         response: false,
         error: {
           type: "invalid/missing params",
-          description: errors[0].constraints && "",
+          description:
+            errors[0].constraints?.[Object.keys(errors[0].constraints)[0]] ||
+            "",
         },
       };
     }
