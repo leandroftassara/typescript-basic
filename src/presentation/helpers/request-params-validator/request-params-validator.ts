@@ -1,9 +1,8 @@
 import { validate } from "class-validator";
-import { RequestParamsValidatorResponse } from "../protocols/request-params-validator-response";
-
-export interface RequestParamsValidatorInterface {
-  validate: (requestParams: {}) => Promise<RequestParamsValidatorResponse>;
-}
+import {
+  RequestParamsValidatorInterface,
+  RequestParamsValidatorResponse,
+} from "./request-params-validator-interface";
 
 export class RequestParamsValidator<T extends object>
   implements RequestParamsValidatorInterface
@@ -17,7 +16,6 @@ export class RequestParamsValidator<T extends object>
     const errors = await validate(instance);
 
     if (errors.length > 0) {
-      console.log(errors[0]);
       return {
         response: false,
         error: {

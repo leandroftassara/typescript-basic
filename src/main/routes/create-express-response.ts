@@ -1,5 +1,5 @@
 import { Response } from "express";
-import { HttpResponse } from "../protocols/http-response";
+import { HttpResponse } from "../../presentation/protocols/http-response";
 
 export const createExpressResponse = (
   expressReponse: Response,

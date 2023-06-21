@@ -1,6 +1,6 @@
-import { HttpResponse } from "./http-response";
+import { HttpResponse } from "../../protocols/http-response";
 
-export interface ControllerResponses {
+export interface ControllerResponseInterface {
   ok: (response: object) => HttpResponse;
   created: () => HttpResponse;
   badRequest: (response: object) => HttpResponse;

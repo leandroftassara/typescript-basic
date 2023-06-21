@@ -1,7 +1,7 @@
-import { ControllerResponses } from "../protocols/controller-responses";
-import { HttpResponse } from "../protocols/http-response";
+import { HttpResponse } from "../../protocols/http-response";
+import { ControllerResponseInterface } from "./controller-response-interface";
 
-export class HttpResponses implements ControllerResponses {
+export class ControllerResponse implements ControllerResponseInterface {
   ok = (response: object): HttpResponse => {
     return { statusCode: 200, body: { success: true, response } };
   };

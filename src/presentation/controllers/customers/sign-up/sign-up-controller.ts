@@ -2,14 +2,14 @@ import {
   SignUp,
   SignUpParams,
 } from "../../../../domain/usecases/customers/sign-up";
-import { RequestParamsValidatorInterface } from "../../../helpers/request-params-validator";
-import { Controller } from "../../../../domain/protocols/controller";
-import { ControllerResponses } from "../../../protocols/controller-responses";
+import { ControllerResponse } from "../../../helpers/controller-response/controller-response";
+import { RequestParamsValidatorInterface } from "../../../helpers/request-params-validator/request-params-validator-interface";
+import { Controller } from "../../../protocols/controller";
 import { HttpResponse } from "../../../protocols/http-response";
 
 export class SignUpController implements Controller {
   constructor(
-    private readonly responses: ControllerResponses,
+    private readonly responses: ControllerResponse,
     private readonly signUpService: SignUp,
     private readonly requestParamsValidator: RequestParamsValidatorInterface
   ) {}

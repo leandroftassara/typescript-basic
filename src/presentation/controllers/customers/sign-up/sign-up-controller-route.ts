@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { makeSignUpController } from "./sign-up-controller-factory";
 import { Request, Response } from "express";
-import { createExpressResponse } from "../../../helpers/create-express-response";
+import { createExpressResponse } from "../../../../main/routes/create-express-response";
 
 export const signUpRoute = Router();
 
