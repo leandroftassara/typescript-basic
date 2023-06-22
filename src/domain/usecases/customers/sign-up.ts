@@ -6,8 +6,7 @@ export class SignUpParams {
 }
 
 export type SignUpResponse = {
-  status: boolean;
-  response: object;
+  token: string;
 };
 
 export interface SignUp {

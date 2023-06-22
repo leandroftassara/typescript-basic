@@ -19,7 +19,7 @@ export class RequestParamsValidator<T extends object>
       return {
         response: false,
         error: {
-          type: "invalid/missing params",
+          error: "invalid/missing params",
           description:
             errors[0].constraints?.[Object.keys(errors[0].constraints)[0]] ||
             "",

@@ -6,6 +6,6 @@ import {
 
 export class SignUpService implements SignUp {
   async execute(signUpParams: SignUpParams): Promise<SignUpResponse> {
-    return { status: true, response: { jwt: "jwtExample" } };
+    return { token: "jwtExample" };
   }
 }

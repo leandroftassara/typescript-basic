@@ -1,5 +1,5 @@
 export interface ErrorDescription {
-  type: string;
+  error: string;
   description: string;
 }
 
