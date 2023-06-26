@@ -1,16 +1,16 @@
 import {
-  SignUp,
-  SignUpParams,
-} from "../../../../domain/usecases/customers/sign-up";
+  GetCustomer,
+  GetCustomerParams,
+} from "../../../../domain/usecases/customers/get-customer";
 import { ControllerResponse } from "../../../helpers/controller-response/controller-response";
 import { RequestParamsValidatorInterface } from "../../../helpers/request-params-validator/request-params-validator-interface";
 import { Controller } from "../../../protocols/controller";
 import { HttpResponse } from "../../../protocols/http-response";
 
-export class SignUpController implements Controller {
+export class GetCustomerController implements Controller {
   constructor(
     private readonly responses: ControllerResponse,
-    private readonly signUpService: SignUp,
+    private readonly getCustomerService: GetCustomer,
     private readonly requestParamsValidator: RequestParamsValidatorInterface
   ) {}
 
@@ -23,10 +23,10 @@ export class SignUpController implements Controller {
       if (!paramsValidatorResponse.response)
         return this.responses.badRequest(paramsValidatorResponse.error);
 
-      const validatedParams = params as SignUpParams;
+      const validatedParams = params as GetCustomerParams;
 
       /* Chamada do serviço principial */
-      const response = await this.signUpService.execute(validatedParams);
+      const response = await this.getCustomerService.execute(validatedParams);
       return this.responses.ok(response);
     } catch (error) {
       return this.responses.serverError({ message: error });

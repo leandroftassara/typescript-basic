@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { signUpRoute } from "./sign-up/sign-up-controller-route";
 
-export const customerRoutes = Router();
+export const registersRoutes = Router();
 
-customerRoutes.use(signUpRoute);
+registersRoutes.use(signUpRoute);

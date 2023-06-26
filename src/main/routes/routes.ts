@@ -1,6 +1,8 @@
 import { Router } from "express";
-import { customerRoutes } from "../../presentation/controllers/customers/customer-routes";
+import { registersRoutes } from "../../presentation/controllers/registers/registers-routes";
+import { customersRoutes } from "../../presentation/controllers/customers/customers-routes";
 
 export const appRouter = Router();
 
-appRouter.use("/customers", customerRoutes);
+appRouter.use("/", registersRoutes);
+appRouter.use("/customers", customersRoutes);
